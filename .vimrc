@@ -17,7 +17,7 @@ set relativenumber      " turn on relative numbers
 set noswapfile          " disable SWAP file creation
 set autoread            " auto reload file when it's changed
 set wildmenu            " show wild menu over the command line
-
+set nowrap              " Set no wrap lines enabled
 
 " -------------- STATUS LINE -------------------- "
 set laststatus=2
