@@ -5,8 +5,11 @@ alias ls='ls -GFh'
 
 export PATH="$HOME/.cargo/bin:$PATH"
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+#alias vim='~/Applications/nvim-osx64/bin/nvim'
 
 #autocomplete for git branch names
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
+
+export PYTHONDONTWRITEBYTECODE=1
