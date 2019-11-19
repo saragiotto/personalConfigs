@@ -19,3 +19,10 @@ mkdir FMFonts
 unzip Fira_Mono.zip -d FMFonts
 cp FMFonts/*.ttf ~/Library/Fonts/
 rm -rf FMFonts
+
+echo 'Install Xcode theme'
+if [ ! -d '~/Library/Developer/Xcode/UserData/FontAndColorThemes' ]
+then 
+    mkdir ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+fi
+cp GruvboxDark.xccolortheme ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
