@@ -13,3 +13,9 @@ then
 else
     echo 'Gruvbox for Vim already installed'
 fi
+
+echo 'Install Fira Mono Font'
+mkdir FMFonts
+unzip Fira_Mono.zip -d FMFonts
+cp FMFonts/*.ttf ~/Library/Fonts/
+rm -rf FMFonts
