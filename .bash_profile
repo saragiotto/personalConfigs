@@ -3,9 +3,8 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='clear; ls -GFhl'
 
-export PATH="$HOME/.cargo/bin:$PATH"
-#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-#alias vim='~/Applications/nvim-osx64/bin/nvim'
+export PATH="$HOME/.cargo/bin:$PATH:/usr/local/sbin"
+source /Users/leonardo/.rvm/scripts/rvm
 
 #autocomplete for git branch names
 if [ -f ~/.git-completion.bash ]; then
