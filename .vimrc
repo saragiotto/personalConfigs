@@ -13,6 +13,7 @@ set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 colorscheme gruvbox
+set background=dark     " Dark background for gruvbox
 set relativenumber      " turn on relative numbers
 set noswapfile          " disable SWAP file creation
 set autoread            " auto reload file when it's changed
