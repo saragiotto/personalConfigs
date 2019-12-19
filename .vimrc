@@ -19,6 +19,10 @@ set noswapfile          " disable SWAP file creation
 set autoread            " auto reload file when it's changed
 set wildmenu            " show wild menu over the command line
 set nowrap              " Set no wrap lines enabled
+
+" -------------- YAML SYNTAX -------------------- "
+au BufNewFile,BufRead *.yaml,*.yml,* so ~/.vim/bundle/yaml.vim
+
 " -------------- Project Drawer ----------------- "
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
