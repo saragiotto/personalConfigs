@@ -1,4 +1,4 @@
-set runtimepath^=~/.vim/bundle/swift.vim
+set runtimepath+=~/.vim/pack/bundle
 
 set nocompatible
 syntax enable           " enable syntax processing
@@ -19,6 +19,23 @@ set noswapfile          " disable SWAP file creation
 set autoread            " auto reload file when it's changed
 set wildmenu            " show wild menu over the command line
 set nowrap              " Set no wrap lines enabled
+" -------------- Project Drawer ----------------- "
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
+
+" ------------ Bingings fot Tabs ---------------- "
+" Ctrl T opens a new tab "
+nnoremap <C-t>     :tabnew<CR>
+" move to the previous/next tabpage.
+nnoremap <C-j> gT
+nnoremap <C-k> gt
 
 " -------------- STATUS LINE -------------------- "
 set laststatus=2
