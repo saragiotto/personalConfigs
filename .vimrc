@@ -1,4 +1,3 @@
-set runtimepath+=~/.vim/bundle/start
 set runtimepath+=~/.vim/pack/default
 set nocompatible
 
@@ -13,15 +12,13 @@ set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+set bs=2                " enable backspace on INSERT mode
 colorscheme gruvbox
 set relativenumber      " turn on relative numbers
 set noswapfile          " disable SWAP file creation
 set autoread            " auto reload file when it's changed
 set wildmenu            " show wild menu over the command line
 set nowrap              " Set no wrap lines enabled
-
-" -------------- YAML SYNTAX -------------------- " 
-au BufNewFile,BufRead *.yaml,*.yml,* so ~/.vim/bundle/start/yaml.vim
 
 " -------------- STATUS LINE -------------------- "
 set laststatus=2

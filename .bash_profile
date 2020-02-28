@@ -4,6 +4,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='clear; ls -GFhl'
 alias pr-size='git diff --stat dev'
 alias vim='/usr/local/Cellar/vim/8.2.0250_1/bin/vim' 
+alias iosrec='xcrun simctl io booted recordVideo myVideo.mov'
 
 export PATH="$HOME/.cargo/bin:$PATH:/usr/local/sbin"
 source /Users/leonardo/.rvm/scripts/rvm
