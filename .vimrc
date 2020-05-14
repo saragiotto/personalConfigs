@@ -1,4 +1,4 @@
-source /usr/local/Cellar/vim/8.2.0250_1/share/vim/vim82/defaults.vim 
+"source /usr/local/Cellar/vim/8.2.0250_1/share/vim/vim82/defaults.vim 
 set nocompatible
 
 " -------------- Dependency -------------------- "
@@ -11,6 +11,7 @@ nnoremap <leader>sb :!swift %<CR>
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 nnoremap <C-p> :GFiles<CR>
+nnoremap <C-l> :Ag<CR>
 
 if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
@@ -19,6 +20,8 @@ endif
 set timeoutlen=1000
 set ttimeoutlen=50
 set updatetime=250
+
+let g:ackprg = 'ag --vimgrep'
 
 if executable('sourcekit-lsp')
     au User lsp_setup call lsp#register_server({
@@ -47,29 +50,4 @@ set noswapfile          " disable SWAP file creation
 set autoread            " auto reload file when it's changed
 set wildmenu            " show wild menu over the command line
 set nowrap              " Set no wrap lines enabled
-
-" -------------- STATUS LINE -------------------- "
-set laststatus=2
-set statusline=
-set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
-set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
-set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
-set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
-set statusline+=\ %n\           " buffer number
-set statusline+=%#Visual#       " colour
-set statusline+=%{&paste?'\ PASTE\ ':''}
-set statusline+=%{&spell?'\ SPELL\ ':''}
-set statusline+=%#CursorIM#     " colour
-set statusline+=%R                        " readonly flag
-set statusline+=%M                        " modified [+] flag
-set statusline+=%#Cursor#               " colour
-set statusline+=%#CursorLine#     " colour
-set statusline+=\ %t\                   " short file name
-set statusline+=%=                          " right align
-set statusline+=%#CursorLine#   " colour
-set statusline+=\ %Y\                   " file type
-set statusline+=%#CursorIM#     " colour
-set statusline+=\ %3l:%-2c\         " line + column
-set statusline+=%#Cursor#       " colour
-set statusline+=\ %3p%%\                " percentage
 
