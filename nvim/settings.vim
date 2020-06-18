@@ -3,6 +3,9 @@ set nocompatible
 let mapleader = " "
 nmap <leader>hj :diffget //3<CR>
 nmap <leader>hg :diffget //2<CR>
+map <C-P> <Plug>AirlineSelectPrevTab <CR>
+map <C-N> <Plug>AirlineSelectNextTab <CR>
+nnoremap <C-X>x :bd <CR>
 
 set timeoutlen=1000
 set ttimeoutlen=50

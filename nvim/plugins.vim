@@ -46,5 +46,11 @@ call plug#begin('~/.config/nvim/plugged')
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    
+    " Quick-Scope
+    Plug 'unblevable/quick-scope'
+
+    " Startify
+    Plug 'mhinz/vim-startify'
 
 call plug#end()
