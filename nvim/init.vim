@@ -5,3 +5,4 @@ source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/quick-scope.vim
 source $HOME/.config/nvim/start-screen.vim
+source $HOME/.config/nvim/gruvbox.vim

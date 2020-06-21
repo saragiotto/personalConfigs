@@ -19,7 +19,6 @@ set softtabstop=4       " number of spaces in tab when editing
 " for Java Script files, 2 spaces
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 set expandtab           " tabs are spaces
-
 set number              " show line numbers
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
@@ -30,7 +29,6 @@ set cursorline          " highlight current line
 set bs=2                " enable backspace on INSERT mode
 set cc=130              " vertical rule indicator
 set scrolloff=5         " keep 5 line above and below the cursor
-colorscheme gruvbox
 set relativenumber      " turn on relative numbers
 set noswapfile          " disable SWAP file creation
 set autoread            " auto reload file when it's changed
