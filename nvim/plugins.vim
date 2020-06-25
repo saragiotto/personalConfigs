@@ -10,10 +10,10 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
     " Gruvbox Color scheme
-    Plug 'morhetz/gruvbox' 
+    Plug 'Dave-Elec/gruvbox' 
 
-    " Swift VIM
-    Plug 'keith/swift.vim'
+    " Nord Color scheme
+    Plug 'arcticicestudio/nord-vim'
 
     " Airline
     Plug 'vim-airline/vim-airline'
@@ -52,5 +52,15 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Startify
     Plug 'mhinz/vim-startify'
+
+    " Rainbow Parentheses
+    Plug 'kien/rainbow_parentheses.vim'
+
+    " Swift Highlight
+    Plug 'keith/swift.vim'
+    Plug 'vim-syntastic/syntastic'
+
+    " Gutten Tags
+    Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
