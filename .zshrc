@@ -8,10 +8,10 @@ export ZSH="/Users/leonardo/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="evan"
+ZSH_THEME="robbyrussell"
 # PROMPT='%{$fg_bold[blue]%n%}%{$fg[white]@%}%{$fg_bold[green]%m: %}%{$fg_bold[yellow]%4~%}$ %{$reset_color%}'
 # PROMPT='%{$fg_bold[blue]%n%}%{$fg[white]@%}: %}%{$fg_bold[yellow]%2~%}$ %{$reset_color%}'
-PROMPT='%{$fg_bold[blue]>%} %{$fg_bold[yellow]%2~%}$ %{$reset_color%}'
+### PROMPT='%{$fg_bold[blue]>%} %{$fg_bold[yellow]%1~%}$ %{$reset_color%}'
 # PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 # PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} '
 
@@ -112,10 +112,13 @@ source $ZSH/oh-my-zsh.sh
 
 alias ls='clear; ls -GFhl'
 alias pr-size='git diff --stat dev'
-# alias vim='/usr/local/Cellar/vim/8.2.0250_1/bin/vim' 
 alias iosrec='xcrun simctl io booted recordVideo myVideo.mov'
+alias root='cd $(git rev-parse --show-toplevel)'
+alias ctags='/usr/local/bin/ctags'
+alias tmux='tmux -2'
+alias tswift='tmux attach-session -t swift'
 
-export PATH="$HOME/.cargo/bin:$PATH:/usr/local/sbin"
+export PATH="$HOME/.cargo/bin:$PATH:/usr/local/sbin:$HOME/Applications/nvim-osx64/bin"
 source /Users/leonardo/.rvm/scripts/rvm
 
 #autocomplete for git branch names
@@ -126,3 +129,9 @@ fi
 export PYTHONDONTWRITEBYTECODE=1
 export LC_ALL=en_US.UTF-8
 bindkey -v
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
