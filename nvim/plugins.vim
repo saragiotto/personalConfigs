@@ -12,9 +12,6 @@ call plug#begin('~/.config/nvim/plugged')
     " Gruvbox Color scheme
     Plug 'Dave-Elec/gruvbox' 
 
-    " Nord Color scheme
-    Plug 'arcticicestudio/nord-vim'
-
     " Airline
     Plug 'vim-airline/vim-airline'
 
@@ -56,11 +53,19 @@ call plug#begin('~/.config/nvim/plugged')
     " Rainbow Parentheses
     Plug 'kien/rainbow_parentheses.vim'
 
-    " Swift Highlight
-    Plug 'keith/swift.vim'
+    " Syntastic
     Plug 'vim-syntastic/syntastic'
 
     " Gutten Tags
     Plug 'ludovicchabant/vim-gutentags'
+
+    " Vim Go
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+    " Emojis
+    Plug 'junegunn/vim-emoji'
+
+    " Apple swift vim
+    Plug 'apple/swift', { 'rtp': 'utils/vim' }
 
 call plug#end()

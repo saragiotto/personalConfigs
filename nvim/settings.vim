@@ -4,6 +4,11 @@ nmap <leader>hg :diffget //2<CR>
 map <C-p> <Plug>AirlineSelectPrevTab <CR>
 map <C-n> <Plug>AirlineSelectNextTab <CR>
 nnoremap <C-X>x :bd <CR>
+command! BufOnly execute '%bdelete|edit #|normal `"'
+nmap <leader>x :BufOnly <CR>
+
+"map <C-I> :pyf $HOME/.config/nvim/plugged/swift/utils/vim/swift-indent.py<cr>
+"imap <C-I> <c-o>:pyf $HOME/.config/nvim/plugged/swift/utils/vim/swift-indent.py<cr>
 
 set timeoutlen=1000
 set ttimeoutlen=50
@@ -33,3 +38,8 @@ set autoread            " auto reload file when it's changed
 set wildmenu            " show wild menu over the command line
 set nowrap              " Set no wrap lines enabled
 set splitbelow splitright " Set the split direction
+set complete+=kspell
+
+" Autocommands
+":autocmd BufWritePre *.swift %s/\s\+$//e
+":autocmd BufWritePre *.swift %s/\n\{3,}/\r\r/e

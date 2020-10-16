@@ -5,8 +5,8 @@ source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/coc.vim
 source $HOME/.config/nvim/quick-scope.vim
 source $HOME/.config/nvim/start-screen.vim
-"source $HOME/.config/nvim/gruvbox.vim
-source $HOME/.config/nvim/nord.vim
+source $HOME/.config/nvim/gruvbox.vim
 source $HOME/.config/nvim/rainbow-parentheses.vim
 source $HOME/.config/nvim/syntastic.vim
 source $HOME/.config/nvim/gutentags.vim
+source $HOME/.config/nvim/emoji.vim
