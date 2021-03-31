@@ -1,5 +1,16 @@
+if [ "$TMUX" = "" ]; then tmux; fi
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/leonardo/.oh-my-zsh"
@@ -8,16 +19,11 @@ export ZSH="/Users/leonardo/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-# PROMPT='%{$fg_bold[blue]%n%}%{$fg[white]@%}%{$fg_bold[green]%m: %}%{$fg_bold[yellow]%4~%}$ %{$reset_color%}'
-# PROMPT='%{$fg_bold[blue]%n%}%{$fg[white]@%}: %}%{$fg_bold[yellow]%2~%}$ %{$reset_color%}'
-### PROMPT='%{$fg_bold[blue]>%} %{$fg_bold[yellow]%1~%}$ %{$reset_color%}'
-# PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-# PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} '
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -38,7 +44,7 @@ ZSH_THEME="robbyrussell"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -69,17 +75,18 @@ ZSH_THEME="robbyrussell"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  bundler
-  dotenv
-  osx
-  rake
-  rbenv
-  ruby
+    git
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    colored-man-pages
+    sudo
+    history
+    extract
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,28 +117,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='clear; ls -GFhl'
-alias pr-size='git diff --stat dev'
-alias iosrec='xcrun simctl io booted recordVideo myVideo.mov'
-alias root='cd $(git rev-parse --show-toplevel)'
-alias ctags='/usr/local/bin/ctags'
+alias lc='colorls -lA --sd'
 alias tmux='tmux -2'
-alias tswift='tmux attach-session -t swift'
+alias pr-size='git diff origin/dev --shortstat'
+alias temp='sudo powermetrics -s smc'
+alias root='cd $(git rev-parse --show-toplevel)'
 
-export PATH="$HOME/.cargo/bin:$PATH:/usr/local/sbin:$HOME/Applications/nvim-osx64/bin"
-source /Users/leonardo/.rvm/scripts/rvm
+[ -z "$TMUX" ] && export TERM="screen-256color"
 
-#autocomplete for git branch names
-if [ -f ~/.git-completion.bash ]; then
-    source ~/.git-completion.bash
-fi
-
-export PYTHONDONTWRITEBYTECODE=1
-export LC_ALL=en_US.UTF-8
-bindkey -v
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export EDITOR=nvim
-export VISUAL="$EDITOR"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
