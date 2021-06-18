@@ -1,9 +1,11 @@
 set cursorline
-"set guicursor=
 set relativenumber
 set hidden
 set noerrorbells
 set expandtab
+set ts=2
+set sw=2
+set sts=2
 set smartindent
 set nu
 set nowrap
