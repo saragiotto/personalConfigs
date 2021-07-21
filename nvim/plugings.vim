@@ -20,5 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tjdevries/express_line.nvim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'alvan/vim-closetag'
+    Plug 'kyazdani42/nvim-web-devicons' 
+    Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()

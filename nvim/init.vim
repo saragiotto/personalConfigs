@@ -6,3 +6,4 @@ source $HOME/Developer/personalConfigs/nvim/buftabline.vim
 source $HOME/Developer/personalConfigs/nvim/telescope.vim
 source $HOME/Developer/personalConfigs/nvim/express_line.vim
 source $HOME/Developer/personalConfigs/nvim/vue.vim
+source $HOME/Developer/personalConfigs/nvim/nvim_tree.vim
