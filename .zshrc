@@ -1,4 +1,4 @@
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then sh .config/tmux/start.sh; fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -9,11 +9,11 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$HOME/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/leonardo/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -87,6 +87,7 @@ plugins=(
     sudo
     history
     extract
+    wd
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,6 +123,8 @@ alias tmux='tmux -2'
 alias pr-size='git diff origin/dev --shortstat'
 alias temp='sudo powermetrics -s smc'
 alias root='cd $(git rev-parse --show-toplevel)'
+alias indexOn='defaults write com.apple.dt.XCode IDEIndexDisable 0'
+alias indexOff='defaults write com.apple.dt.XCode IDEIndexDisable 1'
 
 [ -z "$TMUX" ] && export TERM="screen-256color"
 
@@ -129,3 +132,5 @@ alias root='cd $(git rev-parse --show-toplevel)'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
+
+set -o vi
