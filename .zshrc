@@ -9,11 +9,12 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export PATH=/opt/local/bin:/opt/local/sbin:$HOME/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$HOME/bin:$HOME/.local/bin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export NPM_HOME=$HOME/.nvm/versions/node/v16.5.0/lib/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -118,13 +119,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias lc='colorls -lA --sd'
 alias tmux='tmux -2'
 alias pr-size='git diff origin/dev --shortstat'
 alias temp='sudo powermetrics -s smc'
-alias root='cd $(git rev-parse --show-toplevel)'
 alias indexOn='defaults write com.apple.dt.XCode IDEIndexDisable 0'
 alias indexOff='defaults write com.apple.dt.XCode IDEIndexDisable 1'
+alias joplin=$HOME/.joplin-bin/bin/joplin
+alias makegen='make generate open=no'
 
 [ -z "$TMUX" ] && export TERM="screen-256color"
 
@@ -134,3 +135,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
 
 set -o vi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

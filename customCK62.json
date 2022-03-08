@@ -1,6 +1,8 @@
 {
   "title": "Motospeed CK62 layer fix",
-  "maintainers": ["Leonardo Saragiotto"],
+  "maintainers": [
+    "Leonardo Saragiotto"
+  ],
   "homepage": "https://github.com/saragiotto/customCK62",
   "import_url": "karabiner://karabiner/assets/complex_modifications/import?url=",
   "rules": [
@@ -35,10 +37,10 @@
             "key_code": "up_arrow",
             "modifiers": {
               "mandatory": [
-                  "left_alt"
+                "left_alt"
               ],
-              "optional": [ 
-                  "left_shift" 
+              "optional": [
+                "left_shift"
               ]
             }
           },
@@ -54,7 +56,7 @@
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
-                  "left_alt"
+                "left_alt"
               ]
             }
           },
@@ -67,27 +69,10 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "escape",
-            "modifiers": {
-              "mandatory": [
-                  "left_command"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": [ "left_command" ] 
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
             "key_code": "z",
             "modifiers": {
               "mandatory": [
-                  "left_alt"
+                "left_alt"
               ]
             }
           },
@@ -103,7 +88,7 @@
             "key_code": "x",
             "modifiers": {
               "mandatory": [
-                  "left_alt"
+                "left_alt"
               ]
             }
           },
@@ -119,7 +104,7 @@
             "key_code": "c",
             "modifiers": {
               "mandatory": [
-                  "left_alt"
+                "left_alt"
               ]
             }
           },
