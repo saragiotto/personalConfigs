@@ -1,4 +1,3 @@
-if [ "$TMUX" = "" ]; then sh .config/tmux/start.sh; fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -137,6 +136,9 @@ alias xgen="make generate; echo; echo xgen command is deprecated, use \'make gen
 set -o vi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+#export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
 alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
+export PATH="$PATH:$HOME/bin"
+alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
