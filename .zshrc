@@ -117,8 +117,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Calls fzf setup
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias tmux='tmux -2'
+# alias tmux='tmux -2'
 alias pr-size='git diff origin/dev --shortstat'
 alias temp='sudo powermetrics -s smc'
 alias indexOn='defaults write com.apple.dt.XCode IDEIndexDisable 0'
@@ -142,3 +145,10 @@ alias xgen="make generate; echo; echo xgen command is deprecated, use \'make gen
 alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
 export PATH="$PATH:$HOME/bin"
 alias xgen="make generate; echo; echo xgen command is deprecated, use \'make generate\'"
+alias netskope-off="sudo launchctl unload /Library/LaunchDaemons/com.netskope.client.auxsvc.plist && sudo chmod -x /Applications/Netskope\ Client.app/ && sudo killall Netskope\ Client"
+alias netskope-on="sudo launchctl load /Library/LaunchDaemons/com.netskope.client.auxsvc.plist && sudo chmod +x /Applications/Netskope\ Client.app/ && open -a /Applications/Netskope\ Client.app"
+alias rmhooks="rm .git/hooks/pre-push .git/hooks/pre-commit"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
